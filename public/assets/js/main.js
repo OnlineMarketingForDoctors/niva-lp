@@ -93,6 +93,30 @@
     });
   }
 
+  /* Gallery lightbox */
+  var lb = document.getElementById('lightbox');
+  var links = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+  if (lb && links.length && typeof lb.showModal === 'function') {
+    var lbImg = lb.querySelector('img'), lbCap = lb.querySelector('figcaption'), current = 0;
+    function show(i) {
+      current = (i + links.length) % links.length;
+      lbImg.src = links[current].getAttribute('href');
+      lbImg.alt = links[current].getAttribute('data-caption') || '';
+      lbCap.textContent = lbImg.alt;
+    }
+    links.forEach(function (a, i) {
+      a.addEventListener('click', function (e) { e.preventDefault(); show(i); lb.showModal(); });
+    });
+    lb.querySelector('[data-lightbox-close]').addEventListener('click', function () { lb.close(); });
+    lb.querySelector('[data-lightbox-prev]').addEventListener('click', function () { show(current - 1); });
+    lb.querySelector('[data-lightbox-next]').addEventListener('click', function () { show(current + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+    lb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
   /* Placeholder contact form: no backend yet */
   var form = document.getElementById('contact-form');
   if (form) {

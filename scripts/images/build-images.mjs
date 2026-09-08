@@ -24,9 +24,12 @@ async function toWebp(src, name, width, quality, extra = {}) {
 // Real clinic photos
 const clinic = [
   ['unnamed (22).jpg', 'clinic-reception'], ['unnamed (23).jpg', 'clinic-waiting'], ['unnamed (5).jpg', 'clinic-reception-2'],
-  ['unnamed (6).jpg', 'clinic-waiting-2'], ['unnamed (19).jpg', 'clinic-exterior-night'], ['unnamed (7).jpg', 'clinic-exterior-day'],
-  ['unnamed (4).jpg', 'clinic-exterior-day-2'], ['unnamed (9).jpg', 'clinic-consult-room'], ['unnamed (20).jpg', 'clinic-reception-wide'],
-  ['unnamed (10).jpg', 'clinic-hallway'], ['unnamed (14).jpg', 'clinic-corridor'],
+  ['unnamed (6).jpg', 'clinic-waiting-2'], ['unnamed (7).jpg', 'clinic-exterior-day'], ['unnamed (4).jpg', 'clinic-exterior-day-2'],
+  ['unnamed (9).jpg', 'clinic-consult-room'], ['unnamed (20).jpg', 'clinic-reception-wide'], ['unnamed (10).jpg', 'clinic-hallway'],
+  ['unnamed (14).jpg', 'clinic-corridor'], ['unnamed (11).jpg', 'clinic-room-2'], ['unnamed (13).jpg', 'clinic-room-3'],
+  ['unnamed (12).jpg', 'clinic-hall-2'], ['unnamed (15).jpg', 'clinic-hall-3'], ['unnamed (17).jpg', 'clinic-reception-3'],
+  ['unnamed (16).jpg', 'clinic-hall-4'], ['unnamed (8).jpg', 'clinic-room-4'], ['unnamed (21).jpg', 'clinic-reception-4'],
+  ['unnamed (19).jpg', 'clinic-exterior-night'], ['unnamed (18).jpg', 'clinic-treatment-room'], ['thumbnail.jpeg', 'clinic-street'],
 ];
 for (const [f, name] of clinic) await toWebp(`assets/clinic photos/${f}`, name, 1600, 78, { small: 800 });
 
