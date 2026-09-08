@@ -1,0 +1,57 @@
+# This site must not be indexed.
+#
+# Crawling is intentionally ALLOWED so that well-behaved crawlers can fetch
+# each URL and read the "X-Robots-Tag: noindex" response header (set in
+# vercel.json) and the <meta name="robots" content="noindex"> tag.
+#
+# Do NOT change this to "Disallow: /": a blocked URL is never fetched, so the
+# noindex directive is never seen, and the URL can still be indexed if anyone
+# links to it. Blocking and noindexing are mutually exclusive.
+
+User-agent: *
+Allow: /
+
+# Generative-AI / dataset crawlers do not honour noindex, so block them outright.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-User
+Disallow: /
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+# No sitemap is published on purpose.
