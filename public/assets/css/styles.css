@@ -558,6 +558,24 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 }
 body.modal-open { overflow: hidden; }
 
+/* Oversized logo watermark on selected sections */
+.wm { position: relative; overflow: clip; isolation: isolate; }
+.wm::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  width: clamp(380px, 52vw, 820px); aspect-ratio: 1;
+  background: url("/assets/logos/watermark.webp") center / contain no-repeat;
+  opacity: 0.07;
+}
+.wm-intro::before { left: -14%; bottom: -28%; }
+.wm-fees::before { right: -12%; top: -18%; filter: brightness(0) invert(1); opacity: 0.05; }
+.wm-faqs::before { left: -16%; bottom: -22%; }
+.wm-book::before { right: -10%; bottom: -30%; }
+@media (max-width: 899px) {
+  .wm::before { width: 70vw; opacity: 0.06; }
+  .wm-intro::before { left: auto; right: -30%; top: -12%; bottom: auto; }
+  .wm-book::before { right: -35%; top: -10%; bottom: auto; }
+}
+
 /* Reveal on scroll (media only, kept subtle) */
 [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
 [data-reveal].is-in { opacity: 1; transform: none; }
