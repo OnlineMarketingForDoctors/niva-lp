@@ -84,7 +84,7 @@
 
   /* Review marquee: duplicate cards once so the loop is seamless */
   if (!reduceMotion) {
-    document.querySelectorAll('.marquee-track, .trust-track').forEach(function (track) {
+    document.querySelectorAll('.marquee-track').forEach(function (track) {
       Array.prototype.slice.call(track.children).forEach(function (c) {
         var clone = c.cloneNode(true);
         clone.setAttribute('aria-hidden', 'true');
