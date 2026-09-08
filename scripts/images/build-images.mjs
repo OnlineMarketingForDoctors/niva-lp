@@ -50,4 +50,13 @@ for (const [src, dst] of [['logo dark.webp', 'logo-dark.webp'], ['logo white.web
   fs.copyFileSync(path.join(ROOT, 'assets/brand', src), path.join(LOGOS, dst));
 }
 fs.copyFileSync(path.join(ROOT, 'assets/brand/favicon_nivamedicalclinic_co_uk_64x64.png'), path.join(ROOT, 'public/favicon.png'));
+// Association / regulator logos (white on transparent, for the navy trust strip)
+const ASSOC = [
+  ['Asset-18-1024x307-1.png', 'assoc-hcpc'], ['CQC-e1736967860427.png', 'assoc-cqc'], ['ICO_Logo_White-e1736967775173.png', 'assoc-ico'],
+  ['MDU-380x95-1-e1736967904815.png', 'assoc-mdu'], ['maxresdefault__1_-removebg-preview-1-1.png', 'assoc-doctify'],
+  ['output-onlinepngtools.png', 'assoc-bms'], ['royal-college-of-general-practitioners.png', 'assoc-rcgp'], ['unnamed-removebg-preview-1-1.png', 'assoc-bma'],
+];
+for (const [src, name] of ASSOC) {
+  await sharp(path.join(ROOT, 'assets/associations', src)).trim().resize({ height: 160, withoutEnlargement: false }).webp({ quality: 90, alphaQuality: 90 }).toFile(path.join(LOGOS, `${name}.webp`));
+}
 console.log('logos ok');
