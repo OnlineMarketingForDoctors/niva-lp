@@ -288,15 +288,11 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 
 /* Awards */
 .awards { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
-.awards li { display: inline-flex; flex-direction: column; gap: 0.15rem; padding: 0.75rem 1.1rem; border-radius: 14px; background: var(--mist); border: 1px solid var(--line); line-height: 1.2; }
+.awards li { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.1rem 0.7rem 0.75rem; border-radius: 14px; background: var(--mist); border: 1px solid var(--line); line-height: 1.2; }
+.awards .award-ico { flex: 0 0 38px; width: 38px; height: 38px; padding: 7px; border-radius: 50%; background: var(--ice); color: var(--sky-deep); }
+.awards li span { display: flex; flex-direction: column; gap: 0.15rem; }
 .awards li b { font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: var(--t-sm); }
-.awards li span { font-size: var(--t-xs); color: var(--muted); }
-.awards .award-img { padding: 0; background: none; border: 0; }
-.awards .award-img img { height: 3.6rem; width: auto; border-radius: 14px; box-shadow: var(--shadow-sm); }
-.awards .award-lead { background: var(--navy); border-color: var(--navy); flex-basis: 100%; padding: 1rem 1.25rem; }
-.awards .award-lead b { color: #fff; font-size: 1.15rem; }
-.awards .award-lead span { color: var(--sky); }
-@media (min-width: 900px) { .awards .award-lead { flex-basis: auto; } }
+.awards li small { font-size: var(--t-xs); color: var(--muted); }
 
 /* GPs quote */
 .gps-quote { margin-top: 2.5rem; max-width: 34rem; margin-inline: auto; background: var(--ice); box-shadow: none; }
