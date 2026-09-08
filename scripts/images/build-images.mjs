@@ -44,6 +44,7 @@ for (const n of ['varsani', 'vagani', 'qureshi', 'dravid', 'sumar']) await toWeb
 const LOGOS = path.join(ROOT, 'public/assets/logos');
 fs.mkdirSync(LOGOS, { recursive: true });
 await sharp(path.join(ROOT, 'assets/brand/doctify-award-2026.png')).resize({ width: 600 }).webp({ quality: 85 }).toFile(path.join(LOGOS, 'doctify-award.webp'));
+await sharp(path.join(ROOT, 'assets/brand/e2media-award-2026.png')).resize({ width: 700 }).webp({ quality: 85 }).toFile(path.join(LOGOS, 'e2media-award.webp'));
 await sharp(path.join(ROOT, 'assets/brand/ico-white.png')).trim().resize({ width: 400 }).webp({ quality: 85 }).toFile(path.join(LOGOS, 'ico-white.webp'));
 for (const [src, dst] of [['logo dark.webp', 'logo-dark.webp'], ['logo white.webp', 'logo-white.webp'], ['CQC badge.webp', 'cqc.webp'], ['doctify logo.svg', 'doctify.svg']]) {
   fs.copyFileSync(path.join(ROOT, 'assets/brand', src), path.join(LOGOS, dst));
