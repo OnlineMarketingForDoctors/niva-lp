@@ -30,6 +30,7 @@ const clinic = [
   ['unnamed (12).jpg', 'clinic-hall-2'], ['unnamed (15).jpg', 'clinic-hall-3'], ['unnamed (17).jpg', 'clinic-reception-3'],
   ['unnamed (16).jpg', 'clinic-hall-4'], ['unnamed (8).jpg', 'clinic-room-4'], ['unnamed (21).jpg', 'clinic-reception-4'],
   ['unnamed (19).jpg', 'clinic-exterior-night'], ['unnamed (18).jpg', 'clinic-treatment-room'], ['thumbnail.jpeg', 'clinic-street'],
+  ['799674011_17948348886268613_3862661529923367562_n.jpg', 'award-varsani'],
 ];
 for (const [f, name] of clinic) await toWebp(`assets/clinic photos/${f}`, name, 1600, 78, { small: 800 });
 

@@ -261,7 +261,7 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .intro-text em { font-style: normal; color: var(--sky-deep); }
 .cluster { position: relative; padding: 0 0 3.5rem 2.5rem; }
 .cluster .main { border-radius: var(--r-lg); box-shadow: var(--shadow-md); width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.cluster .sat { position: absolute; left: 0; bottom: 0; width: 54%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 35%; border-radius: var(--r-md); box-shadow: var(--shadow-lg); border: 5px solid #fff; transform: rotate(-3deg); }
+.cluster .sat { position: absolute; left: 0; bottom: 0; width: 46%; aspect-ratio: 1; object-fit: cover; object-position: 50% 40%; border-radius: var(--r-md); box-shadow: var(--shadow-lg); border: 5px solid #fff; transform: rotate(-3deg); }
 .cluster .chip { position: absolute; right: 1rem; top: -1rem; background: var(--navy); color: #fff; border-radius: 999px; padding: 0.55rem 0.95rem; font-family: var(--font-display); font-weight: 700; font-size: var(--t-sm); box-shadow: var(--shadow-md); }
 @media (min-width: 900px) {
   .intro-grid { grid-template-columns: 1.05fr 1fr; gap: 5rem; }
