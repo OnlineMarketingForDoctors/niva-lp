@@ -83,13 +83,13 @@
   }
 
   /* Review marquee: duplicate cards once so the loop is seamless */
-  var track = document.querySelector('.marquee-track');
-  if (track && !reduceMotion) {
-    var cards = Array.prototype.slice.call(track.children);
-    cards.forEach(function (c) {
-      var clone = c.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.appendChild(clone);
+  if (!reduceMotion) {
+    document.querySelectorAll('.marquee-track, .trust-track').forEach(function (track) {
+      Array.prototype.slice.call(track.children).forEach(function (c) {
+        var clone = c.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
     });
   }
 

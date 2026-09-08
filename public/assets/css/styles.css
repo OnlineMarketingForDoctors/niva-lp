@@ -202,15 +202,19 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
   .hero-media img { object-position: 62% center; }
 }
 
-/* Trust bar */
-.trust { background: var(--navy); color: #fff; padding-block: 1.6rem; }
-.trust-inner { display: flex; align-items: center; gap: 1.25rem 2rem; flex-wrap: wrap; justify-content: center; }
-.trust-label { font-family: var(--font-display); font-size: var(--t-sm); font-weight: 600; color: rgba(255,255,255,0.75); flex-basis: 100%; text-align: center; margin: 0; }
-.trust-logos { display: flex; align-items: center; gap: 1.1rem 2rem; flex-wrap: wrap; justify-content: center; }
-.trust-logos img { height: 34px; width: auto; opacity: 0.92; }
-.trust-logos img.tall { height: 52px; }
+/* Trust bar: full-width logo ticker */
+.trust { background: var(--navy); padding-block: 1.75rem; overflow: hidden; position: relative; }
+.trust::before, .trust::after { content: ""; position: absolute; top: 0; bottom: 0; width: 10%; z-index: 2; pointer-events: none; }
+.trust::before { left: 0; background: linear-gradient(90deg, var(--navy), rgba(37,44,63,0)); }
+.trust::after { right: 0; background: linear-gradient(270deg, var(--navy), rgba(37,44,63,0)); }
+.trust-track { --gap: clamp(2.5rem, 5vw, 4.5rem); display: flex; align-items: center; gap: var(--gap); width: max-content; padding-left: var(--gap); animation: marquee 45s linear infinite; }
+.trust:hover .trust-track { animation-play-state: paused; }
+.trust-track img { height: 40px; width: auto; flex: 0 0 auto; opacity: 0.94; }
+.trust-track img.tall { height: 58px; }
 @media (min-width: 900px) {
-  .trust-label { flex-basis: auto; text-align: left; margin-right: auto; }
+  .trust { padding-block: 2rem; }
+  .trust-track img { height: 46px; }
+  .trust-track img.tall { height: 66px; }
 }
 
 /* Reviews marquee */
@@ -551,6 +555,7 @@ body.modal-open { overflow: hidden; }
   *, *::before, *::after { animation-duration: 0.001s !important; animation-iteration-count: 1 !important; transition-duration: 0.001s !important; }
   [data-reveal] { opacity: 1; transform: none; }
   .marquee { overflow-x: auto; }
-  .marquee-track { animation: none; width: auto; }
+  .marquee-track, .trust-track { animation: none; width: auto; }
+  .trust { overflow-x: auto; }
   .hero-media img { transform: none; }
 }
