@@ -313,7 +313,7 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 
 /* Consultation options */
 .options { background: var(--ice); position: relative; overflow: clip; }
-.options .section-head { max-width: 30ch; }
+.options .section-head { max-width: 46rem; }
 .options .section-head .lede { max-width: 58ch; }
 .options-grid { display: grid; gap: 2rem; }
 .option { background: #fff; border-radius: var(--r-lg); box-shadow: var(--shadow-sm); overflow: clip; display: flex; flex-direction: column; scroll-margin-top: calc(var(--header-h) + 1rem); }
