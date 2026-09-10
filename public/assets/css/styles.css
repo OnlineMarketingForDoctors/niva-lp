@@ -115,7 +115,7 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .header-book-mobile { display: none; }
 .nav { display: none; }
 .nav a {
-  font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.07em; text-transform: uppercase;
   color: var(--navy); text-decoration: none; padding: 0.4rem 0.2rem; position: relative; white-space: nowrap;
 }
 .nav a::after { content: ""; position: absolute; left: 0.2rem; right: 0.2rem; bottom: 0; height: 2px; background: var(--sky); transform: scaleX(0); transform-origin: left; transition: transform 0.25s var(--ease); }
@@ -135,8 +135,9 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 }
 @media (min-width: 900px) {
   .brand img { height: 46px; }
-  .nav { display: flex; flex: 1; justify-content: center; gap: clamp(0.5rem, 1.4vw, 1.4rem); }
-  .header-phone { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1; text-decoration: none; color: var(--navy); }
+  .nav { display: flex; flex: 1 1 0; min-width: 0; justify-content: center; gap: clamp(0.4rem, 1.2vw, 1.3rem); }
+  .header-phone { display: flex; flex: 0 0 auto; flex-direction: column; align-items: flex-end; line-height: 1.1; text-decoration: none; color: var(--navy); white-space: nowrap; }
+  .header-actions { flex: 0 0 auto; }
   .header-phone small { font-family: var(--font-display); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky-deep); }
   .header-phone strong { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; }
   .header-actions { margin-left: 0; gap: 1.1rem; }
@@ -174,7 +175,8 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .hero-points li::before { content: ""; flex: 0 0 22px; width: 22px; height: 22px; margin-top: 0.15rem; border-radius: 50%; background: var(--sky) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23252C3F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L19 7'/%3E%3C/svg%3E") center / 13px no-repeat; }
 .hero-points li strong { font-weight: 700; color: var(--navy); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; animation: rise 0.9s var(--ease) 0.6s both; }
-.hero-cta .note { font-size: var(--t-sm); color: var(--muted); }
+.hero-call { font-size: var(--t-sm); color: var(--muted); margin: 0.25rem 0 0; animation: rise 0.9s var(--ease) 0.7s both; }
+.hero-call a { font-weight: 600; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; animation: rise 0.9s var(--ease) 0.75s both; }
 .badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
@@ -255,8 +257,11 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .intro { background: var(--mist); }
 .intro-grid { display: grid; gap: 2.5rem; align-items: center; }
 .intro-copy { display: grid; gap: 1.75rem; justify-items: start; }
+.intro-title { font-size: var(--t-2xl); max-width: 16ch; margin-bottom: 1.25rem; }
 .intro-text { font-family: var(--font-display); font-size: clamp(1.35rem, 1rem + 1.3vw, 1.85rem); font-weight: 500; line-height: 1.35; color: var(--navy); max-width: 30ch; margin: 0; font-variation-settings: "opsz" 24; }
 .intro-text em { font-style: normal; color: var(--sky-deep); }
+.gps { background: var(--ice); }
+.gps-quote { background: #fff; }
 .cluster { position: relative; padding: 0 0 3.5rem 2.5rem; }
 .cluster .main { border-radius: var(--r-lg); box-shadow: var(--shadow-md); width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transform: scaleX(-1); }
 .cluster .sat { position: absolute; left: 0; bottom: 0; width: 46%; aspect-ratio: 1; object-fit: cover; object-position: 50% 40%; border-radius: var(--r-md); box-shadow: var(--shadow-lg); border: 5px solid #fff; transform: rotate(-3deg); }
