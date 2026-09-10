@@ -75,7 +75,8 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .lede { font-size: var(--t-lg); color: var(--muted); max-width: 58ch; }
 .section-head { max-width: 44ch; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
 .section-head p { margin-top: 1rem; }
-.section-head .section-sub { margin-top: 1.25rem; font-size: var(--t-xl); color: var(--sky-deep); }
+.section-head .section-top { font-size: var(--t-2xl); font-weight: 700; font-variation-settings: "opsz" 72; line-height: 1.05; }
+.section-head .section-sub { margin-top: 1.25rem; font-size: var(--t-xl); font-weight: 600; font-variation-settings: "opsz" 48; line-height: 1.15; color: var(--sky-deep); }
 .anchor { display: block; position: relative; top: calc(-1 * var(--section)); visibility: hidden; height: 0; }
 
 /* Buttons */
