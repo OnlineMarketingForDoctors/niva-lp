@@ -628,3 +628,37 @@ body.modal-open { overflow: hidden; }
   .marquee-track { animation: none; width: auto; }
   .hero-media img { transform: none; }
 }
+
+/* Thank-you pages (/thank-you-enquiry, /thank-you-booking) */
+.thanks { background: var(--ice); padding-top: calc(var(--header-h) + clamp(3rem, 8vw, 6rem)); min-height: 100vh; display: flex; align-items: center; }
+.wm-thanks::before { right: -12%; bottom: -26%; }
+.thanks-grid { display: grid; gap: 2.5rem; align-items: center; }
+.thanks-main { display: grid; gap: 1.25rem; justify-items: start; }
+.thanks-main h1 { font-size: var(--t-2xl); max-width: 16ch; }
+.thanks-main .lede { margin: 0; }
+.thanks-main .lede a { color: var(--navy); font-weight: 600; }
+.thanks-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--sky); color: var(--navy); display: grid; place-items: center; box-shadow: 0 10px 24px rgba(117, 189, 233, 0.45); }
+.thanks-icon svg { width: 34px; height: 34px; }
+.thanks-kicker { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky-deep); }
+.thanks-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 0.5rem; }
+.thanks-back { margin: 0; font-size: var(--t-sm); }
+.thanks-back a { color: var(--muted); }
+.thanks-card { background: #fff; border-radius: var(--r-lg); padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: var(--shadow-md); }
+.thanks-card h2 { font-size: var(--t-xl); margin-bottom: 1.25rem; }
+.thanks-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; counter-reset: step; }
+.thanks-steps li { display: grid; grid-template-columns: 2.25rem 1fr; column-gap: 0.9rem; align-items: start; padding-top: 1rem; border-top: 1px solid var(--line); }
+.thanks-steps li::before { counter-increment: step; content: counter(step); width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--ice); color: var(--navy); font-family: var(--font-display); font-weight: 800; display: grid; place-items: center; grid-row: 1 / span 2; }
+.thanks-steps strong { font-family: var(--font-display); color: var(--navy); font-size: var(--t-md); }
+.thanks-steps span { grid-column: 2; color: var(--muted); font-size: var(--t-sm); }
+.thanks-note { margin: 1.5rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: var(--t-sm); color: var(--muted); }
+.thanks-note a { color: var(--navy); font-weight: 600; }
+.thanks-page .header-book { display: inline-flex; min-height: 2.75rem; padding: 0.5rem 1.1rem; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.thanks-page .header-phone { display: none; }
+@media (min-width: 700px) {
+  .thanks-page .header-phone { display: flex; flex: 0 0 auto; flex-direction: column; align-items: flex-end; line-height: 1.1; text-decoration: none; color: var(--navy); white-space: nowrap; }
+  .thanks-page .icon-btn { display: none; }
+}
+@media (min-width: 900px) {
+  .thanks-grid { grid-template-columns: 1.15fr 0.85fr; gap: clamp(3rem, 6vw, 6rem); }
+  .thanks-page .header-book { min-height: 2.9rem; padding: 0.6rem 1.35rem; }
+}

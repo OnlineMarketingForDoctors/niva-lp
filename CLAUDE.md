@@ -42,5 +42,16 @@ Also: publish no `sitemap.xml`, and do not add analytics/verification tags
 
 ### Verifying
 
-After any deploy, run `./scripts/check-noindex.sh <url>` and confirm it
-passes before considering the work done.
+After any deploy, run `./scripts/check-noindex.sh` against every page and
+confirm it passes before considering the work done:
+
+```sh
+./scripts/check-noindex.sh https://niva-lp.vercel.app \
+  https://niva-lp.vercel.app/thank-you-enquiry \
+  https://niva-lp.vercel.app/thank-you-booking
+```
+
+Pages: `public/index.html`, `public/thank-you-enquiry.html` (contact form
+redirect) and `public/thank-you-booking.html` (Semble booking redirect).
+`vercel.json` uses `cleanUrls` so each `.html` file is served at its bare
+path. Any new page must carry the robots meta tag above.

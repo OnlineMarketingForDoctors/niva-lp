@@ -2,7 +2,10 @@
 (function () {
   'use strict';
 
-  var SEMBLE_URL = 'https://online-booking.semble.io/?token=fb139c090c61e2f90eb51c33b1a093098f5acf80';
+  var SEMBLE_ORIGIN = 'https://online-booking.semble.io';
+  var SEMBLE_URL = SEMBLE_ORIGIN + '/?token=fb139c090c61e2f90eb51c33b1a093098f5acf80';
+  var BOOKING_THANKS_URL = '/thank-you-booking';
+  var ENQUIRY_THANKS_URL = '/thank-you-enquiry';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var header = document.querySelector('.header');
@@ -15,18 +18,21 @@
   /* Sticky header state + back-to-top visibility */
   function onScroll() {
     var y = window.scrollY || document.documentElement.scrollTop;
-    header.classList.toggle('is-scrolled', y > 24);
-    toTop.classList.toggle('is-visible', y > 600);
+    if (header) header.classList.toggle('is-scrolled', y > 24);
+    if (toTop) toTop.classList.toggle('is-visible', y > 600);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  toTop.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-  });
+  if (toTop) {
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
 
   /* Mobile menu */
   function openMenu() {
+    if (!menu) return;
     menu.classList.add('is-open');
     menu.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
@@ -34,17 +40,19 @@
     if (first) first.focus();
   }
   function closeMenu() {
+    if (!menu) return;
     menu.classList.remove('is-open');
     menu.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
   }
   document.querySelectorAll('[data-menu-open]').forEach(function (b) { b.addEventListener('click', openMenu); });
   document.querySelectorAll('[data-menu-close]').forEach(function (b) { b.addEventListener('click', closeMenu); });
-  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+  if (menu) menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
 
   /* Booking modal: every booking button opens the Semble calendar */
   function openBooking(e) {
     if (e) e.preventDefault();
+    if (!modal) return;
     lastFocus = document.activeElement;
     if (modalFrame && !modalFrame.getAttribute('src')) modalFrame.setAttribute('src', SEMBLE_URL);
     closeMenu();
@@ -55,18 +63,35 @@
     if (close) close.focus();
   }
   function closeBooking() {
+    if (!modal) return;
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   document.querySelectorAll('[data-book]').forEach(function (b) { b.addEventListener('click', openBooking); });
-  modal.querySelectorAll('[data-modal-close]').forEach(function (b) { b.addEventListener('click', closeBooking); });
-  modal.addEventListener('click', function (e) { if (e.target === modal) closeBooking(); });
+  if (modal) {
+    modal.querySelectorAll('[data-modal-close]').forEach(function (b) { b.addEventListener('click', closeBooking); });
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeBooking(); });
+  }
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (modal.classList.contains('is-open')) closeBooking();
-    else if (menu.classList.contains('is-open')) closeMenu();
+    if (modal && modal.classList.contains('is-open')) closeBooking();
+    else if (menu && menu.classList.contains('is-open')) closeMenu();
+  });
+
+  /* Booking completed: the Semble calendar posts its booking status to this
+     page (bookingStatus is "selecting", "selected" or "booked"). Once a
+     booking is complete, send the patient to the thank-you page. */
+  var bookingDone = false;
+  window.addEventListener('message', function (e) {
+    if (e.origin !== SEMBLE_ORIGIN || bookingDone) return;
+    var data = e.data;
+    if (typeof data === 'string') { try { data = JSON.parse(data); } catch (err) { return; } }
+    if (data && data.bookingStatus === 'booked') {
+      bookingDone = true;
+      window.location.assign(BOOKING_THANKS_URL);
+    }
   });
 
   /* Reveal media on scroll */
@@ -134,15 +159,15 @@
     });
   }
 
-  /* Placeholder contact form: no backend yet */
+  /* Contact form: validate, then send the visitor to the thank-you page.
+     No backend receives the submission yet; when one is connected, submit
+     the data first and redirect on success. */
   var form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var msg = form.querySelector('.form-msg');
-      msg.hidden = false;
-      msg.textContent = 'Thank you. This form is not connected yet. Please call 020 8865 1938 or use the booking calendar to reach us today.';
-      msg.focus();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      window.location.assign(ENQUIRY_THANKS_URL);
     });
   }
 
