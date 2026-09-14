@@ -39,7 +39,7 @@
         "mainEntity": [
           { "@type": "Question", "name": "Do I have to leave my NHS GP?", "acceptedAnswer": { "@type": "Answer", "text": "No. Niva complements NHS care rather than replacing it. You stay registered with your NHS GP and use Niva whenever you want faster access, a longer appointment, a second opinion or preventive care." } },
           { "@type": "Question", "name": "Will my insurance cover it?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your policy. Many international policies, and UK policies with an outpatient or cash benefit, allow you to claim some or all of the cost back. We provide receipts and any documentation your insurer asks for." } },
-          { "@type": "Question", "name": "How much is it, and are there hidden costs?", "acceptedAnswer": { "@type": "Answer", "text": "A 20-minute appointment is £80 face-to-face, £70 by video or £60 by telephone. A 30-minute appointment is £110 face-to-face or £90 by telephone or video. Referrals and private prescriptions are included at no extra charge. Weekend and bank holiday appointments carry a £10 supplement. There are no other charges for a GP appointment." } },
+          { "@type": "Question", "name": "How much is it, and are there hidden costs?", "acceptedAnswer": { "@type": "Answer", "text": "A 20-minute appointment is £80 face-to-face, or £70 by video or telephone. A 30-minute appointment is £110 face-to-face or £90 by telephone or video. Referrals and private prescriptions are included at no extra charge. Weekend and bank holiday appointments carry a £10 supplement. There are no other charges for a GP appointment." } },
           { "@type": "Question", "name": "Can I be seen today?", "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes. We offer same-day face-to-face, telephone and video appointments, subject to availability, including weekday evenings and Saturdays. Book online to see today's slots." } },
           { "@type": "Question", "name": "Can a private GP refer me?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We arrange private specialist referrals and, where appropriate, write to your NHS GP or make recommendations for NHS referral. For certain hospitals we can make direct urgent suspected cancer referrals into NHS pathways where the criteria are met." } },
           { "@type": "Question", "name": "Do you do scans?", "acceptedAnswer": { "@type": "Answer", "text": "Blood tests and 12-lead ECGs are done at the clinic. We do not perform ultrasound, X-ray, CT or MRI on site. When imaging is needed our GPs refer you to trusted partner providers and review the results with you afterwards." } },
@@ -69,7 +69,6 @@
       <a href="#opening-hours">Hours</a>
       <a href="#faqs">FAQs</a>
       <a href="#find-us">Find us</a>
-      <a href="#book">Contact us</a>
     </nav>
 
     <div class="header-actions">
@@ -78,6 +77,7 @@
         <strong>020 8865 1938</strong>
       </a>
       <button class="btn btn-primary header-book" type="button" data-book>Book appointment</button>
+      <a class="btn btn-sky header-contact" href="#book">Contact us</a>
       <a class="icon-btn" href="tel:+442088651938" aria-label="Call 020 8865 1938">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
       </a>
@@ -100,11 +100,11 @@
     <a href="#opening-hours">Opening hours</a>
     <a href="#faqs">FAQs</a>
     <a href="#find-us">Find us</a>
-    <a href="#book">Contact us</a>
   </div>
   <div class="menu-foot">
     <a class="phone" href="tel:+442088651938">020 8865 1938</a>
-    <button class="btn btn-sky btn-lg" type="button" data-book>Book appointment</button>
+    <button class="btn btn-primary btn-lg" type="button" data-book>Book appointment</button>
+    <a class="btn btn-sky btn-lg" href="#book">Contact us</a>
   </div>
 </div>
 
@@ -214,13 +214,13 @@
       <article class="option" id="remote">
         <div class="option-media" data-reveal>
           <img src="/assets/img/option-remote.webp" alt="A patient speaking to a GP on a video call at home" width="1200" height="900" loading="lazy">
-          <span class="option-price">From <b>£60</b></span>
+          <span class="option-price">From <b>£70</b></span>
         </div>
         <div class="option-body">
           <h3>Telephone and video</h3>
           <p>The same GPs, from your kitchen table or your desk at work. Ideal for new symptoms, medication reviews, results and second opinions. Private prescriptions and referrals are included.</p>
           <ul class="bands">
-            <li><span>20 minutes, telephone</span><b>£60</b></li>
+            <li><span>20 minutes, telephone</span><b>£70</b></li>
             <li><span>20 minutes, video</span><b>£70</b></li>
             <li><span>30 minutes, telephone or video</span><b>£90</b></li>
           </ul>
@@ -348,7 +348,7 @@
             <tr><th scope="col">Appointment</th><th scope="col">Face-to-face</th><th scope="col">Video</th><th scope="col">Telephone</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">20-minute GP appointment<br><small>One issue, or a straightforward review</small></th><td>£80</td><td>£70</td><td>£60</td></tr>
+            <tr><th scope="row">20-minute GP appointment<br><small>One issue, or a straightforward review</small></th><td>£80</td><td>£70</td><td>£70</td></tr>
             <tr><th scope="row">30-minute GP appointment<br><small>Several concerns, or something complex</small></th><td>£110</td><td>£90</td><td>£90</td></tr>
             <tr><th scope="row">GP home visit</th><td colspan="3">£180 <small>within 3 miles of the clinic. £220 within 5 miles.</small></td></tr>
             <tr><th scope="row">Weekend and bank holiday</th><td colspan="3">+£10 <small>supplement on any appointment</small></td></tr>
@@ -435,7 +435,7 @@
         </details>
         <details class="faq">
           <summary>How much is it, and are there hidden costs? <span class="plus" aria-hidden="true"></span></summary>
-          <div class="faq-body"><p>A 20-minute appointment is £80 face-to-face, £70 by video or £60 by telephone. A 30-minute appointment is £110 face-to-face or £90 by telephone or video. Referrals and private prescriptions are included at no extra charge. Weekend and bank holiday appointments carry a £10 supplement. There are no other charges for a GP appointment. Any tests are priced separately and agreed with you first.</p></div>
+          <div class="faq-body"><p>A 20-minute appointment is £80 face-to-face, or £70 by video or telephone. A 30-minute appointment is £110 face-to-face or £90 by telephone or video. Referrals and private prescriptions are included at no extra charge. Weekend and bank holiday appointments carry a £10 supplement. There are no other charges for a GP appointment. Any tests are priced separately and agreed with you first.</p></div>
         </details>
         <details class="faq">
           <summary>Can I be seen today? <span class="plus" aria-hidden="true"></span></summary>
