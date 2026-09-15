@@ -511,25 +511,13 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .book-cta .btn { justify-self: start; }
 .book-cta .alt { color: var(--muted); }
 .book-cta .alt a { font-weight: 600; }
-.form-card { background: #fff; border-radius: var(--r-lg); padding: 1.6rem; box-shadow: var(--shadow-md); }
+.form-card { display: grid; gap: 0; }
 .form-card h3 { font-size: 1.35rem; margin-bottom: 0.35rem; }
-.form-card > p { color: var(--muted); font-size: var(--t-sm); margin-bottom: 1.25rem; }
-.form-grid { display: grid; gap: 0.9rem; }
-.field { display: grid; gap: 0.35rem; }
-.field label { font-size: var(--t-sm); font-weight: 600; color: var(--navy); }
-.field input, .field select, .field textarea {
-  font: inherit; width: 100%; padding: 0.8rem 0.95rem; border-radius: var(--r-sm); border: 1.5px solid var(--line); background: var(--mist); color: var(--text);
-  transition: border-color 0.2s, background-color 0.2s;
-}
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--sky-deep); background: #fff; }
-.field textarea { min-height: 7rem; resize: vertical; }
-.form-grid .btn { justify-self: start; margin-top: 0.25rem; }
-.form-msg { margin-top: 1rem; background: var(--ice); color: var(--navy); border-radius: var(--r-sm); padding: 0.85rem 1rem; font-size: var(--t-sm); }
+.form-card > p { color: var(--muted); font-size: var(--t-sm); margin: 0 0 1rem; }
+/* Embedded lead form: the vendor script sets the iframe height to the form's own height */
+.form-card iframe { width: 100%; border: 0; border-radius: 10px; }
 @media (min-width: 900px) {
   .book-grid { grid-template-columns: 5fr 7fr; gap: 4rem; align-items: start; }
-  .form-grid { grid-template-columns: 1fr 1fr; }
-  .form-grid .span-2 { grid-column: 1 / -1; }
-  .form-card { padding: 2.25rem; }
 }
 
 /* Footer */

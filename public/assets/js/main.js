@@ -5,7 +5,6 @@
   var SEMBLE_ORIGIN = 'https://online-booking.semble.io';
   var SEMBLE_URL = SEMBLE_ORIGIN + '/?token=fb139c090c61e2f90eb51c33b1a093098f5acf80';
   var BOOKING_THANKS_URL = '/thank-you-booking';
-  var ENQUIRY_THANKS_URL = '/thank-you-enquiry';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var header = document.querySelector('.header');
@@ -156,18 +155,6 @@
     lb.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowLeft') show(current - 1);
       if (e.key === 'ArrowRight') show(current + 1);
-    });
-  }
-
-  /* Contact form: validate, then send the visitor to the thank-you page.
-     No backend receives the submission yet; when one is connected, submit
-     the data first and redirect on success. */
-  var form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      window.location.assign(ENQUIRY_THANKS_URL);
     });
   }
 
