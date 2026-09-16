@@ -157,15 +157,4 @@
       if (e.key === 'ArrowRight') show(current + 1);
     });
   }
-
-  /* Opening hours: mark today's row */
-  var day = new Date().getDay(); // 0 = Sunday
-  var row = document.querySelector('.hours-card tr[data-day="' + day + '"]');
-  if (row) {
-    var cell = row.querySelector('th');
-    var tag = document.createElement('span');
-    tag.className = 'tag';
-    tag.textContent = 'Today';
-    cell.appendChild(tag);
-  }
 })();

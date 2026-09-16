@@ -414,7 +414,6 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .hours-card td { text-align: right; font-family: var(--font-display); font-weight: 700; color: var(--navy); }
 .hours-card tr.closed td { color: var(--muted); font-weight: 500; }
 .hours-card tr:last-child th, .hours-card tr:last-child td { border-bottom: 0; }
-.hours-card .tag { display: inline-block; background: var(--sky); color: var(--navy); border-radius: 6px; padding: 0.1rem 0.45rem; font-size: 0.7rem; font-weight: 700; margin-left: 0.5rem; vertical-align: middle; }
 .hours-card .btn { width: 100%; margin-top: 1.25rem; }
 @media (min-width: 900px) {
   .hours-grid { grid-template-columns: 1.1fr 0.9fr; gap: 5rem; }
