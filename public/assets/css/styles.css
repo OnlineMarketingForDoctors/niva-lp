@@ -311,7 +311,7 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .awards li { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.1rem 0.7rem 0.75rem; border-radius: 14px; background: var(--mist); border: 1px solid var(--line); line-height: 1.2; }
 .awards .award-ico { flex: 0 0 38px; width: 38px; height: 38px; padding: 7px; border-radius: 50%; background: var(--ice); color: var(--sky-deep); }
 .awards li span { display: flex; flex-direction: column; gap: 0.15rem; }
-.awards li b { font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: var(--t-sm); }
+.awards li b { font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: var(--t-xs); }
 .awards li small { font-size: var(--t-xs); color: var(--muted); }
 
 /* GPs quote */
@@ -412,7 +412,7 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .hours-card th, .hours-card td { padding: 0.65rem 0; text-align: left; border-bottom: 1px solid var(--line); font-size: var(--t-sm); }
 .hours-card th { font-weight: 600; color: var(--navy); }
 .hours-card td { text-align: right; font-family: var(--font-display); font-weight: 700; color: var(--navy); }
-.hours-card tr.closed td { color: var(--muted); font-weight: 500; }
+.hours-card tr.closed td { color: var(--muted); font-weight: 500; font-family: var(--font-body); font-size: var(--t-xs); line-height: 1.35; padding-left: 1rem; }
 .hours-card tr:last-child th, .hours-card tr:last-child td { border-bottom: 0; }
 .hours-card .btn { width: 100%; margin-top: 1.25rem; }
 @media (min-width: 900px) {
@@ -530,7 +530,10 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .footer-col a { text-decoration: none; }
 .footer-col a:hover { text-decoration: underline; }
 .footer-hours li { display: flex; justify-content: space-between; gap: 1rem; }
+.footer-hours li span:first-child { flex: 0 0 auto; }
+.footer-hours li span:last-child { text-align: right; }
 .footer-hours li span:last-child { color: #fff; font-weight: 600; }
+.footer-hours li:last-child span:last-child { color: rgba(255,255,255,0.75); font-weight: 400; font-size: var(--t-xs); line-height: 1.35; }
 .social { display: flex; gap: 0.6rem; margin-top: 1rem; }
 .social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: inline-grid; place-items: center; }
 .social a:hover { background: var(--sky); color: var(--navy); }
