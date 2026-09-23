@@ -133,8 +133,31 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
 .header-book, .header-contact { display: none; }
 
 @media (max-width: 899px) {
+  .header-inner { gap: 0.5rem; }
+  .brand img { height: 36px; }
+  .header-actions { gap: 0.4rem; }
+  .icon-btn { width: 40px; height: 40px; }
+  .icon-btn svg { width: 20px; height: 20px; }
+  /* Contact us sits in the header on mobile too, sized to fit beside the menu */
+  .header-contact { display: inline-flex; min-height: 2.4rem; padding: 0.45rem 0.85rem; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; border-width: 0; }
   .header.is-scrolled .brand { display: none; }
-  .header.is-scrolled .header-book-mobile { display: inline-flex; min-height: 2.75rem; padding: 0.5rem 1.1rem; font-size: 0.85rem; }
+  .header.is-scrolled .header-book-mobile { display: inline-flex; min-height: 2.4rem; padding: 0.45rem 0.85rem; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; }
+  /* Once Book appears there is no room for the call icon; the menu keeps the number */
+  .header.is-scrolled .icon-btn[href^="tel:"] { display: none; }
+}
+@media (max-width: 420px) {
+  .brand img { height: 32px; }
+  .header-contact, .header.is-scrolled .header-book-mobile { padding: 0.45rem 0.7rem; font-size: 0.72rem; }
+  .icon-btn { width: 36px; height: 36px; }
+}
+@media (max-width: 359px) {
+  /* Narrowest phones: keep Contact us and the menu, the number stays in the menu */
+  .icon-btn[href^="tel:"] { display: none; }
+  .header-contact, .header.is-scrolled .header-book-mobile { padding: 0.4rem 0.45rem; font-size: 0.63rem; letter-spacing: 0; }
+  .header-inner { gap: 0.35rem; }
+  .header-actions { gap: 0.3rem; }
+  .icon-btn { width: 32px; height: 32px; }
+  .icon-btn svg { width: 18px; height: 18px; }
 }
 @media (min-width: 900px) {
   .brand img { height: 46px; }
