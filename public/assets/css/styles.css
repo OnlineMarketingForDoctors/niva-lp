@@ -149,7 +149,7 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
   .header.is-scrolled .header-contact { border-width: 0; }
   /* Buttons take the logo's place on the left, the call and menu icons stay right */
   .header.is-scrolled .header-actions { margin-left: 0; flex: 1 1 auto; }
-  .header.is-scrolled .header-actions .icon-btn:first-of-type { margin-left: auto; }
+  .header.is-scrolled .header-actions .header-contact { margin-right: auto; }
 }
 @media (max-width: 420px) {
   .brand img { height: 32px; }
