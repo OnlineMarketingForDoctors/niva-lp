@@ -147,12 +147,14 @@ section[id], article[id] { scroll-margin-top: calc(var(--header-h) + 0.75rem); }
     font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase;
   }
   .header.is-scrolled .header-contact { border-width: 0; }
-  .header.is-scrolled .icon-btn[href^="tel:"] { display: none; }
+  /* Buttons take the logo's place on the left, the call and menu icons stay right */
+  .header.is-scrolled .header-actions { margin-left: 0; flex: 1 1 auto; }
+  .header.is-scrolled .header-actions .icon-btn:first-of-type { margin-left: auto; }
 }
 @media (max-width: 420px) {
   .brand img { height: 32px; }
-  .header.is-scrolled .header-book-mobile, .header.is-scrolled .header-contact { padding: 0.45rem 0.7rem; font-size: 0.72rem; }
-  .icon-btn { width: 36px; height: 36px; }
+  .header.is-scrolled .header-book-mobile, .header.is-scrolled .header-contact { padding: 0.45rem 0.55rem; font-size: 0.68rem; letter-spacing: 0.02em; }
+  .icon-btn { width: 34px; height: 34px; }
 }
 @media (max-width: 359px) {
   /* Narrowest phones: both buttons still fit once they are this compact */
