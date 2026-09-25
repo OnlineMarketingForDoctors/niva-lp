@@ -44,7 +44,7 @@ for (const [name, w, small] of generated) await toWebp(`assets/generated/${name}
 // GP headshots, cropped to a consistent 4:5 portrait
 for (const n of ['varsani', 'vagani', 'dravid']) await toWebp(`assets/team/dr-${n}.jpg`, `gp-${n}`, 720, 82, { cover: [720, 900] });
 await toWebp('assets/team/dr-qureshi.webp', 'gp-qureshi', 720, 82, { cover: [720, 900] });
-await toWebp('assets/team/dr-sumar.png', 'gp-sumar', 720, 82, { cover: [720, 900] });
+await toWebp('assets/team/dr-sumar.webp', 'gp-sumar', 720, 82, { cover: [720, 900] });
 
 // Logos and badges
 const LOGOS = path.join(ROOT, 'public/assets/logos');
