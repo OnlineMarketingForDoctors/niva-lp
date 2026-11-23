@@ -658,6 +658,14 @@ body.modal-open { overflow: hidden; }
 .thanks-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--sky); color: var(--navy); display: grid; place-items: center; box-shadow: 0 10px 24px rgba(117, 189, 233, 0.45); }
 .thanks-icon svg { width: 34px; height: 34px; }
 .thanks-kicker { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky-deep); }
+.clinics { display: grid; gap: 0.85rem; width: 100%; margin-top: 0.25rem; }
+.clinic { background: #fff; border-radius: var(--r-md); padding: 1.1rem 1.25rem; box-shadow: var(--shadow-sm); }
+.clinic h2 { font-family: var(--font-display); font-size: 1.05rem; margin: 0 0 0.35rem; }
+.clinic p { margin: 0 0 0.5rem; font-size: var(--t-sm); color: var(--muted); line-height: 1.45; }
+.clinic a { font-size: var(--t-sm); font-weight: 600; color: var(--sky-deep); }
+@media (min-width: 560px) { .clinics { grid-template-columns: 1fr 1fr; } }
+.footer-col li strong { color: #fff; display: block; margin-top: 0.5rem; }
+.footer-col li:first-child strong { margin-top: 0; }
 .thanks-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 0.5rem; }
 .thanks-back { margin: 0; font-size: var(--t-sm); }
 .thanks-back a { color: var(--muted); }
